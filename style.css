@@ -1,22 +1,44 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 50px;
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
-  color: #333;
+  text-align: center;
+}
+
+#task-form {
+  margin-bottom: 20px;
+}
+
+#task-input {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-item .star-icon {
+  margin-right: 5px;
   cursor: pointer;
 }
 
-#balanceResult {
-  margin-top: 20px;
+.task-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
 }

@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BSC Testnet Balance</title>
+    <title>Wunderlist Clone</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>BSC Testnet Balance</h1>
-    <button id="checkBalanceButton">Check Balance</button>
-    <div id="balanceResult"></div>
+    <div class="container">
+      <h1>Wunderlist Clone</h1>
+      <div id="task-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Neue Aufgabe eingeben"
+        />
+        <button onclick="addTask()">Hinzufügen</button>
+      </div>
+      <ul id="task-list"></ul>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
