@@ -29,20 +29,28 @@ function addTask() {
 function displayTask(task) {
   const taskItem = document.createElement("li");
   taskItem.className = "task-item" + (task.completed ? " completed" : "");
+  const taskText =
+    task.text.length > 25 ? task.text.substr(0, 22) + "..." : task.text;
   taskItem.innerHTML = `
-    <input type="checkbox" onchange="toggleTask(${task.id})" ${
+    <div class="task-content">
+      <input type="checkbox" onchange="toggleTask(${task.id})" ${
     task.completed ? "checked" : ""
   }>
-    <span>${task.text}</span>
-    <span class="star-icon" onclick="toggleStar(${task.id})">${
+      <span>${taskText}</span>
+    </div>
+    <div class="task-controls">
+      <span class="star-icon" onclick="toggleStar(${task.id})">${
     task.starred ? "★" : "☆"
   }</span>
-    <button onclick="deleteTask(${task.id})">Löschen</button>
+      <button class="delete-button" onclick="deleteTask(${
+        task.id
+      })">&#x2190;</button>
+    </div>
   `;
   taskList.appendChild(taskItem);
 }
 
-// Task abhaken/entabhalten
+// Task abhaken
 function toggleTask(id) {
   const taskIndex = tasks.findIndex((task) => task.id === id);
   if (taskIndex !== -1) {
@@ -52,7 +60,7 @@ function toggleTask(id) {
   }
 }
 
-// Task als wichtig markieren/entmarkieren
+// Task markieren
 function toggleStar(id) {
   const taskIndex = tasks.findIndex((task) => task.id === id);
   if (taskIndex !== -1) {
@@ -88,3 +96,10 @@ function displayTasks() {
   taskList.innerHTML = "";
   tasks.forEach((task) => displayTask(task));
 }
+
+// Task hinzufügen bei Eingabetaste
+taskInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
