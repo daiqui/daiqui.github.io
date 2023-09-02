@@ -17,13 +17,15 @@ function startTimer() {
 function stopTimer() {
     alert("stop")
     statusDot.style.backgroundColor = "#222";
+    updateDisplay();
 }
 
 function resetTimer() {
     alert("reset")
-    updateDisplay();
+    display.textContent = "00:00:00"
 }
 
 function updateDisplay() {
     alert("display")
+    display.textContent = "00:11:12"
 }
