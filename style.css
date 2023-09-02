@@ -1,0 +1,45 @@
+body {
+    background-color: #fffde0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px 0;
+    width: 120px;
+    font-size: 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.dot-container {
+    display: flex;
+    align-items: center; 
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+#start-btn, #stop-btn {
+    background-color: #222;
+    color: white;
+}
+
+#reset-btn {
+    background-color: rgb(196, 77, 77);
+    color: white;
+}
