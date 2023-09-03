@@ -40,8 +40,7 @@ class Stopwatch {
     }
     updateDisplay() {
         //Update Display Data
-        alert('display')
-        display.textContent = `${this._duration} sek`
+        display.textContent = `${this._duration} sek`;
     }
 
     _updateStatusDotColor(color) {
