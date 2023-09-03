@@ -8,26 +8,40 @@ class Stopwatch {
     }
 
     start() {
-        //start the watch
-        this._running = true;
-        this._updateStatusDotColor('rgb(196, 77, 77)');
+        if (this._running) {
+            alert('Stopwatch has already started.');
+        } else {
+            //start the watch
+            this._running = true;
+            this._updateStatusDotColor('rgb(196, 77, 77)');
+            this._startTime = new Date();
+        }
     }
 
     stop() {
-        //stop the watch
-        this._running = false;
-        this._updateStatusDotColor('#222');
-        this.updateDisplay();
+        if (this._running) {
+            //stop the watch
+            this._running = false;
+            this._updateStatusDotColor('#222');
+            this._endTime = new Date();
+            const seconds = (this._endTime - this._startTime) / 1000;
+            this._duration += seconds;
+        } else {
+            alert('Stopwatch is not started.');
+        }
     }
 
     reset() {
-        //start the watch
-        display.textContent = '00:00:00'
+        //start the watch   
+        this._startTime = null;
+        this._endTime = null;
+        this._running = false;
+        this._duration = 0;
     }
     updateDisplay() {
         //Update Display Data
         alert('display')
-        display.textContent = '00:11:12'
+        display.textContent = `${this._duration} sek`
     }
 
     _updateStatusDotColor(color) {
@@ -50,10 +64,12 @@ startBtn.addEventListener('click', () => {
 
 stopBtn.addEventListener('click', () => {
     sw.stop();
+    sw.updateDisplay();
 })
 
 resetBtn.addEventListener('click', () => {
     sw.reset();
+    sw.updateDisplay();
 })
 
 display.addEventListener('click', () => {
