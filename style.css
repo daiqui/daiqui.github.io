@@ -1,0 +1,16 @@
+/* CSS */
+section {
+    display: none;
+  }
+
+  #navbar ul {
+    list-style-type: none; /* Entfernt die standardmäßigen Aufzählungspunkte */
+    padding: 0;
+  }
+
+  /* Stil für die Listenpunkte */
+  #navbar li {
+    margin-right: 10px;
+    position: relative; /* Fügt eine Position für die Pfeile hinzu */
+  }
+  
