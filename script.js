@@ -1,31 +1,61 @@
+class Stopwatch {
+    constructor() {
+        this._startTime = null;
+        this._endTime = null;
+        this._running = false;
+        this._duration = 0;
+        this._statusDot = document.querySelector('.status-dot');
+    }
+
+    start() {
+        //start the watch
+        this._running = true;
+        this._updateStatusDotColor('rgb(196, 77, 77)');
+    }
+
+    stop() {
+        //stop the watch
+        this._running = false;
+        this._updateStatusDotColor('#222');
+        this.updateDisplay();
+    }
+
+    reset() {
+        //start the watch
+        display.textContent = '00:00:00'
+    }
+    updateDisplay() {
+        //Update Display Data
+        alert('display')
+        display.textContent = '00:11:12'
+    }
+
+    _updateStatusDotColor(color) {
+        // Update the status dot's color
+        this._statusDot.style.backgroundColor = color;
+    }
+}
+
 // JavaScript for stopwatch functionality
-const display = document.getElementById("display");
-const startBtn = document.getElementById("start-btn");
-const stopBtn = document.getElementById("stop-btn");
-const resetBtn = document.getElementById("reset-btn");
-const statusDot = document.querySelector(".status-dot");
+const display = document.getElementById('display');
+const startBtn = document.getElementById('start-btn');
+const stopBtn = document.getElementById('stop-btn');
+const resetBtn = document.getElementById('reset-btn');
 
-startBtn.addEventListener("click", startTimer);
-stopBtn.addEventListener("click", stopTimer);
-resetBtn.addEventListener("click", resetTimer);
+const sw = new Stopwatch();
 
-function startTimer() {
-    alert("start")
-    statusDot.style.backgroundColor = "rgb(196, 77, 77)";
-}
+startBtn.addEventListener('click', () => {
+    sw.start();
+})
 
-function stopTimer() {
-    alert("stop")
-    statusDot.style.backgroundColor = "#222";
-    updateDisplay();
-}
+stopBtn.addEventListener('click', () => {
+    sw.stop();
+})
 
-function resetTimer() {
-    alert("reset")
-    display.textContent = "00:00:00"
-}
+resetBtn.addEventListener('click', () => {
+    sw.reset();
+})
 
-function updateDisplay() {
-    alert("display")
-    display.textContent = "00:11:12"
-}
+display.addEventListener('click', () => {
+    sw.updateDisplay();
+})
