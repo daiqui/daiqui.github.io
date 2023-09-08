@@ -88,10 +88,17 @@ a{
     transition: 0.3s;
   }
 
-  nav-item{
+  .nav-item{
     margin: 16px 0
   }
+
   .nav-menu.active{
     left: 0;
   }
+}
+/* END:: nav-bar */
+
+body{
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
 }
