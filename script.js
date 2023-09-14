@@ -1,27 +1,9 @@
+//script.js
+import { navigateTo } from './router.js';
+
 const contentContainer = document.getElementById("content");
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-
-// Define routes and their corresponding content
-const routes = {
-    "/": "Home",
-    "/about": "About",
-    "/contact": "Contact",
-};
-
-function loadContent(route) {
-    const content = routes[route];
-    if (content !== undefined) {
-        contentContainer.innerHTML = `<h1>${content}</h1>`;
-    } else {
-        contentContainer.innerHTML = "<h1>Page not found</h1>";
-    }
-}
-
-function navigateTo(route) {
-    window.history.pushState({}, route, route);
-    loadContent(route);
-}
 
 // Handle initial load (default route)
 const initialRoute = window.location.pathname;
@@ -46,5 +28,6 @@ hamburger.addEventListener("click", () => {
 
 // Handle back/forward navigation using browser history
 window.addEventListener("popstate", () => {
-    loadContent(window.location.pathname);
+    const newRoute = window.location.pathname;
+    navigateTo(newRoute);
 });
