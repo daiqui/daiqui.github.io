@@ -23,8 +23,9 @@ function navigateTo(route) {
     loadContent(route);
 }
 
-// Initial load based on the current URL
-loadContent(window.location.pathname);
+// Handle initial load (default route)
+const initialRoute = window.location.pathname;
+navigateTo(initialRoute);
 
 // Handle navigation when links are clicked
 document.querySelectorAll(".nav-link").forEach((link) => {
