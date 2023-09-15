@@ -1,50 +1,27 @@
-const contentContainer = document.getElementById("content");
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+// JavaScript for the single-page application
 
-// Define routes and their corresponding content
-const routes = {
-    "/": "Home",
-    "/about": "About",
-    "/contact": "Contact",
-};
+// Function to load content based on the URL hash
+function loadContent() {
+    const hash = window.location.hash;
+    const contentDiv = document.getElementById('content');
 
-function loadContent(route) {
-    const content = routes[route];
-    if (content !== undefined) {
-        contentContainer.innerHTML = `<h1>${content}</h1>`;
-    } else {
-        contentContainer.innerHTML = "<h1>Page not found</h1>";
+    switch (hash) {
+        case '#home':
+            contentDiv.innerHTML = '<h1>Welcome to the Home Page</h1><p>This is the home page content.</p>';
+            break;
+        case '#about':
+            contentDiv.innerHTML = '<h1>About Us</h1><p>Learn more about our company.</p>';
+            break;
+        case '#contact':
+            contentDiv.innerHTML = '<h1>Contact Us</h1><p>Get in touch with us.</p>';
+            break;
+        default:
+            contentDiv.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
     }
 }
 
-function navigateTo(route) {
-    window.history.pushState({}, route, route);
-    loadContent(route);
-}
+// Event listener to handle hash changes
+window.addEventListener('hashchange', loadContent);
 
-// Handle initial load (default route)
-const initialRoute = window.location.pathname;
-navigateTo(initialRoute);
-
-// Handle navigation when links are clicked
-document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default link behavior (page reload)
-        const route = link.getAttribute("data-route");
-        navigateTo(route);
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    });
-});
-
-// Handle hamburger menu click
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-// Handle back/forward navigation using browser history
-window.addEventListener("popstate", () => {
-    loadContent(window.location.pathname);
-});
+// Initial content load
+loadContent();
