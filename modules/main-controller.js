@@ -1,24 +1,25 @@
 //main-controller
+
 // Function to load content based on the URL hash
-function loadContent() {
+export function loadContent() {
     const hash = window.location.hash;
-    const contentMain = document.getElementById('content');
+    const contentDiv = document.getElementById('content');
 
     switch (hash) {
         case '#bookclub':
-            contentMain.innerHTML = '<h1>Willkommen zum Buchklub Wien</h1><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>';
+            contentDiv.innerHTML = '<h1>Welcome to the Bookclub</h1><p>This is the Bookclub content.</p>';
             break;
         case '#overview':
-            contentMain.innerHTML = '<h1>Overview</h1><p>Erfahre mehr über unseren Buchklub</p>';
+            contentDiv.innerHTML = '<h1>Overview</h1><p>Learn more about our club.</p>';
             break;
         case '#literature':
-            contentMain.innerHTML = '<h1>Literature</h1><p>Entdecke neue Bücher</p>';
+            contentDiv.innerHTML = '<h1>Literature</h1><p>Explore our recommended books.</p>';
             break;
         case '#members':
-            contentMain.innerHTML = '<h1>Members</h1><p>Triff Mitglieder des Buchklub</p>';
+            contentDiv.innerHTML = '<h1>Members</h1><p>Meet our Bookclub members.</p>';
             break;
         default:
-            contentMain.innerHTML = '<h1>Page Not Found</h1><p>Die Angefragte Seite existiert nicht!</p>';
+            contentDiv.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
     }
 }
 
@@ -29,3 +30,6 @@ export function initMainController() {
     // Initial content load
     loadContent();
 }
+
+
+
