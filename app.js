@@ -32,7 +32,6 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", (event) => {
         event.preventDefault(); // Prevent default link behavior (page reload)
         const route = link.getAttribute("data-route");
-        console.log("Clicked on route:", route);
         navigateTo(route);
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
