@@ -6,7 +6,7 @@
 }
 
 header{
-  background-color: #444;
+  background-color: #333;
 }
 
 li{
@@ -37,13 +37,18 @@ a{
   font-size: 2rem;
 }
 
+.nav-branding:hover{
+  color: rgb(146, 218, 146);
+}
+
 .nav-link{
-  transition: 0.2s ease;
+  transition: 0.5s ease;
 }
 
 .nav-link:hover{
   color: dodgerblue;
 }
+
 
 .hamburger{
   display: none;
@@ -74,7 +79,6 @@ a{
     transform: translateY(-8px) rotate(-45deg);
   }
  
- 
 
   .nav-menu{
     position: fixed;
@@ -82,7 +86,7 @@ a{
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: #444;
+    background-color: #333;
     width: 100%;
     text-align: center;
     transition: 0.3s;

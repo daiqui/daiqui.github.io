@@ -1,7 +1,21 @@
-//main-controller
+//main-controller.js
+
+import { navigation } from "./visual-controller.js";
+
+export function mainController() {
+    console.log("mainController active!");
+
+    //access navigation bar
+    navigation();
+
+    // Event listener to handle hash changes
+    window.addEventListener('hashchange', loadContent);
+    // Initial content load
+    loadContent();
+}
 
 // Function to load content based on the URL hash
-export function loadContent() {
+function loadContent() {
     const hash = window.location.hash;
     const contentDiv = document.getElementById('content');
 
@@ -22,14 +36,5 @@ export function loadContent() {
             contentDiv.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
     }
 }
-
-export function initMainController() {
-    // Event listener to handle hash changes
-    window.addEventListener('hashchange', loadContent);
-
-    // Initial content load
-    loadContent();
-}
-
 
 

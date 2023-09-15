@@ -1,7 +1,7 @@
 //app.js
-
-import { initMainController } from "./modules/main-controller.js";
+import { mainController } from "./modules/main-controller.js";
 
 //Start up controllers
-initMainController();
+console.log("app active!");
+mainController();
 
