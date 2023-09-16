@@ -1,9 +1,11 @@
 // app.js
-console.log("app active!");
 
 // Import the Controller class from the controller module.
 import Controller from "./modules/controller.js";
 import { mainController as _mainController } from "./modules/main-controller.js";
+
+// Log the app's activation.
+console.log("app active!");
 
 // Create instances of controllers with appropriate names.
 const mainController = new Controller('main');      // Manages main application logic.
@@ -14,6 +16,9 @@ const viewController = new Controller('view');      // Controls the user interfa
 mainController.start();
 logicController.start();
 viewController.start();
+
+let test = mainController.getName();
+console.log("test");
 
 /* 
 //Start up controllers

@@ -1,10 +1,10 @@
 // controller.js
 export default class Controller {
-    #name;                  // private field: controller name
+    #name = null;                  // private field: controller name
     #isActive = false;      // private field: active state
 
     constructor(controllerName) {
-        this.controllerName = controllerName;
+        this.#name = controllerName;
     }
 
     start() {
@@ -22,7 +22,7 @@ export default class Controller {
 
     getName() {
         // Get the controller's name.
-        return this.controllerName;
+        return this.#name;
     }
 
     getActiveState() {
