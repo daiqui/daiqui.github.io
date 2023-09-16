@@ -30,23 +30,23 @@ function loadPage() {
 // Function to load content based on the URL hash
 function loadContent() {
     const hash = window.location.hash;
-    const contentDiv = document.getElementById('content');
+    const contentMain = document.getElementById('content');
 
     switch (hash) {
-        case '#bookclub':
-            contentDiv.innerHTML = '<h1>Welcome to the Bookclub</h1><p>This is the Bookclub content.</p>';
+        case '':
+            contentMain.innerHTML = '<h1>Welcome to the Bookclub</h1><p>This is the Bookclub content.</p>';
             break;
         case '#overview':
-            contentDiv.innerHTML = '<h1>Overview</h1><p>Learn more about our club.</p>';
+            contentMain.innerHTML = '<h1>Overview</h1><p>Learn more about our club.</p>';
             break;
         case '#literature':
-            contentDiv.innerHTML = '<h1>Literature</h1><p>Explore our recommended books.</p>';
+            contentMain.innerHTML = '<h1>Literature</h1><p>Explore our recommended books.</p>';
             break;
         case '#members':
-            contentDiv.innerHTML = '<h1>Members</h1><p>Meet our Bookclub members.</p>';
+            contentMain.innerHTML = '<h1>Members</h1><p>Meet our Bookclub members.</p>';
             break;
         default:
-            contentDiv.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
+            contentMain.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
     }
 }
 
