@@ -25,6 +25,12 @@ function loadPage() {
 
     // Initial content load
     loadContent();
+
+    // Check if the hash is empty (no hash provided in the URL)
+    if (window.location.hash === '') {
+        // Set the default hash to '#club'
+        window.location.hash = '#club';
+    }
 }
 
 // Function to load content based on the URL hash
@@ -33,7 +39,7 @@ function loadContent() {
     const contentMain = document.getElementById('content');
 
     switch (hash) {
-        case '':
+        case '#club':
             contentMain.innerHTML = '<h1>Welcome to the Bookclub</h1><p>This is the Bookclub content.</p>';
             break;
         case '#overview':
