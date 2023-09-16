@@ -1,14 +1,13 @@
 // main-controller.js
 import Controller from "./controller.js";
-import ViewController from "./view-controller.js";
 
 export default class MainController extends Controller {
     constructor() {
         // Call the constructor of the superclass (Controller) with the default name 'view'.
         super("main");
     }
-    loadNavi(tetris) {
-        tetris.navigation();
+    loadNavi(viewControllerPlaceholder) {
+        viewControllerPlaceholder.navigation();
     }
     getPage() {
         loadPage();
