@@ -1,9 +1,9 @@
 // main-controller.js
 
-import { navigation } from "./visual-controller.js";
+import { navigation } from "./view-controller.js";
 
 export function mainController() {
-    console.log("mainController active!");
+    console.log("old mainController active!");
 
     //access navigation bar
     navigation();

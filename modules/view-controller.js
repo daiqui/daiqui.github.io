@@ -1,7 +1,7 @@
-// visual-controller.js
+// view-controller.js
 // nav-bar
 export function navigation() {
-    console.log("visualController active!");
+    console.log("old visualController active!");
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
 

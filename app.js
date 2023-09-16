@@ -2,6 +2,8 @@
 
 // Import the Controller class from the controller module.
 import Controller from "./modules/controller.js";
+
+/******************************   PLEASE CHANGE  **************************************/
 import { mainController as _mainController } from "./modules/main-controller.js";
 
 // Log the app's activation.
@@ -17,10 +19,8 @@ mainController.start();
 logicController.start();
 viewController.start();
 
-let test = mainController.getName();
-console.log("test");
-
 /* 
+*****************************   PLEASE CHANGE  ****************************************
+*/
 //Start up controllers
 _mainController();
-*/
