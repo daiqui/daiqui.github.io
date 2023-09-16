@@ -1,15 +1,29 @@
 // main-controller.js
+import Controller from "./controller.js";
+import ViewController from "./view-controller.js";
 
-import { navigation } from "./view-controller.js";
+export default class MainController extends Controller {
+    constructor() {
+        // Call the constructor of the superclass (Controller) with the default name 'view'.
+        super("main");
+    }
+    loadNavi(tetris) {
+        tetris.navigation();
+    }
+    getPage() {
+        loadPage();
+    }
+}
 
-export function mainController() {
+/*************************** Please change code below accordingly */
+
+function loadPage() {
+
+
     console.log("old mainController active!");
-
-    //access navigation bar
-    navigation();
-
     // Event listener to handle hash changes
     window.addEventListener('hashchange', loadContent);
+
     // Initial content load
     loadContent();
 }

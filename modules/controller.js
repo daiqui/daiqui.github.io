@@ -1,6 +1,6 @@
 // controller.js
 export default class Controller {
-    #name = null;                  // private field: controller name
+    #name = null;           // private field: controller name
     #isActive = false;      // private field: active state
 
     constructor(controllerName) {
@@ -15,7 +15,7 @@ export default class Controller {
             console.log(`${this.#name} Controller active!`);
             return true;
         } else {
-            console.log("Controller is already active!");
+            console.log(`${this.#name} Controller is already active!`);
             return false;
         }
     }
