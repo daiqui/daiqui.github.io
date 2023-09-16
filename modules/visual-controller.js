@@ -1,4 +1,4 @@
-//visual-controller.js
+// visual-controller.js
 // nav-bar
 export function navigation() {
     console.log("visualController active!");

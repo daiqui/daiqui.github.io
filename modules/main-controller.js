@@ -1,4 +1,4 @@
-//main-controller.js
+// main-controller.js
 
 import { navigation } from "./visual-controller.js";
 
