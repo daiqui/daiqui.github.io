@@ -17,8 +17,8 @@ mainController.start();
 logicController.start();
 viewController.start();
 
-/******************************   PLEASE CHANGE  *****************************************/
-//_mainController();
-mainController.loadNavi(viewController);
-mainController.getPage();
-/******************************   PLEASE CHANGE  *****************************************/
+// Configure the navigation panel, allowing users to switch between pages.
+mainController.pageMenu(viewController);
+
+// Load the content displayed for each page of the website.
+mainController.loadPageContent();

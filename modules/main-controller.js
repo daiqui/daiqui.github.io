@@ -6,20 +6,17 @@ export default class MainController extends Controller {
         // Call the constructor of the superclass (Controller) with the default name 'view'.
         super("main");
     }
-    loadNavi(viewControllerPlaceholder) {
-        viewControllerPlaceholder.navigation();
+
+    pageMenu(visualController) {
+        visualController.navPanel();
     }
-    getPage() {
+
+    loadPageContent() {
         loadPage();
     }
 }
 
-/*************************** Please change code below accordingly */
-
 function loadPage() {
-
-
-    console.log("old mainController active!");
     // Event listener to handle hash changes
     window.addEventListener('hashchange', loadContent);
 
@@ -40,7 +37,7 @@ function loadContent() {
 
     switch (hash) {
         case '#club':
-            contentMain.innerHTML = '<h1>Welcome to the Bookclub</h1><p>This is the Bookclub content.</p>';
+            contentMain.innerHTML = '<h1>Willkommen zum Buchklub</h1><p>Das ist der Inhalt des Buchklubs</p>';
             break;
         case '#overview':
             contentMain.innerHTML = '<h1>Overview</h1><p>Learn more about our club.</p>';

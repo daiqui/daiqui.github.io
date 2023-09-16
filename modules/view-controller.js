@@ -6,18 +6,15 @@ export default class ViewController extends Controller {
         // Call the constructor of the superclass (Controller) with the default name 'view'.
         super("view");
     }
-    navigation() {
-        _navigation();
-        //////////////// BETTER NAME NEEDED !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    navPanel() {
+        navBar();
     }
 }
 
-
-// nav-bar
-function _navigation() {
-    console.log("old visualController active!");
+function navBar() {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const navBranding = document.querySelector(".nav-branding");
 
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
@@ -28,4 +25,10 @@ function _navigation() {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }))
+
+    navBranding.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    })
 }
+
