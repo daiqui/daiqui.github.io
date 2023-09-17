@@ -8,6 +8,10 @@
 body{
   background-color: white;
   /* font */
+  font-family: 'Roboto', sans-serif;
+}
+
+h1{
   font-family: 'Inter', sans-serif;
 }
 
@@ -130,7 +134,8 @@ footer {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #e0e0e0;
+  filter: brightness(50%); 
   transition: color 0.1s, transform 0.1s, filter 0.1s;
 }
 
