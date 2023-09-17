@@ -20,5 +20,9 @@ viewController.start();
 // Configure the navigation panel, allowing users to switch between pages.
 mainController.pageMenu(viewController);
 
+// Updates href attribute to redirect users to WhatsApp .
+mainController.updateWhatsAppLink();
+
 // Load the content displayed for each page of the website.
 mainController.loadPageContent();
+

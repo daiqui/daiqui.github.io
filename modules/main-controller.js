@@ -1,5 +1,6 @@
 // main-controller.js
 import Controller from "./controller.js";
+import createConfig from "./config.js";
 
 export default class MainController extends Controller {
     constructor() {
@@ -9,6 +10,12 @@ export default class MainController extends Controller {
     // This function adds the navigation menu to the view using the provided 'visualController'.
     pageMenu(visualController) {
         visualController.navPanel();
+    }
+    // Updates the href attribute of <a> elements to redirect users to the real WhatsApp link.
+    updateWhatsAppLink() {
+        const configLink = createConfig().getWhatsAppLink();
+        const linkElement = document.getElementById("whatsAppLink");
+        linkElement.setAttribute('href', configLink);
     }
     // This function loads content based on the URL hash and sets a default hash if none is provided.
     loadPageContent() {
@@ -52,5 +59,3 @@ function loadContent() {
             contentMain.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
     }
 }
-
-
