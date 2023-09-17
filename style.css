@@ -116,3 +116,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.footer-content {
+  text-align: center;
+}
