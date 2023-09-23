@@ -6,13 +6,14 @@
   }
   
   body{
-    background-color: white;
-    /* font*/ 
+    background-color: #F4F1DE;
     font-family: 'Nanum Gothic', sans-serif;
+    color: #3D405B;
   }
   
   h1{
     font-family: 'Playfair Display', serif;
+    color:  #3D405B;
   }
   
 .pageContentText {
@@ -22,7 +23,7 @@
   }
   
   header{
-    background-color: #333;
+    background-color: #3D405B;
     /* header should stick to the top window*/
     position: fixed;
     top: 0;
@@ -38,7 +39,7 @@
   }
   
   a{
-    color: white;
+    color: #F4F1DE;
     text-decoration: none;
   }
   
@@ -64,7 +65,7 @@
   }
   
   .nav-branding:hover{
-    color: rgb(146, 218, 146);
+    color: #F2CC8F;
   }
   
   .nav-link{
@@ -72,7 +73,7 @@
   }
   
   .nav-link:hover{
-    color: dodgerblue;
+    color: #F2CC8F;
   }
   
   
@@ -88,12 +89,12 @@
     margin: 5px auto;
     -webkit-transition: all 0.3 ease-in-out;
     transition: all 0.3 ease-in-out;
-    background-color: white;
+    background-color: #F4F1DE;
   }
 
   /* footer */
   footer {
-    background-color: white;
+    background-color:  #F4F1DE;
     padding: 20px;
     position: fixed;
     bottom: 0;
@@ -113,13 +114,14 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: #e0e0e0;
-    filter: brightness(85%); 
+    /*this was the color before: "color: #e0e0e0;" and "filter: brightness(85%); "*/
+    color: #81B29A;
+    filter: brightness(70%); 
     transition: color 0.1s, transform 0.1s, filter 0.1s;
   }
   
   .whatsapp-link:hover {
-    color: #9e9e9e;         /* Change color on hover */
+    color: #3D405B;       /* Change color on hover:: previous color was: #9e9e9e*/
     transform: scale(1.005);   /* Slightly increase the scale effect on hover */
     filter: brightness(50%);  /* Slightly reduce brightness on hover for sharper text */
   }
@@ -150,7 +152,7 @@
       top: 70px;
       gap: 0;
       flex-direction: column;
-      background-color: #333;
+      background-color: #3D405B;
       width: 100%;
       text-align: center;
       transition: 0.3s;
@@ -167,5 +169,45 @@
     }
   }
   /* END:: nav-bar */
-  
-  
+
+
+
+  /*///////////////////////////  TEST - div ////////////*/
+.test0 {
+  background-color: #E07A5F;
+  border-radius: 10px; 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+  color: #3D405B;
+  padding: 20px;
+}
+
+.test1 {
+  background-color: #F2CC8F;
+  border-radius: 10px; 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+  color: #3D405B;
+  padding: 20px; 
+}
+
+.test2 {
+  background-color: #81B29A;
+  border-radius: 10px; 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+  color: #3D405B;
+  padding: 20px; 
+}
+
+/* Stil für den h1-Titel innerhalb der .test-Div */
+.test0 h1 {
+  color: #F4F1DE;
+}
+
+.test1 h1 {
+  color: #F4F1DE;
+}
+
+.test2 h1 {
+  color: #F4F1DE;
+}
+
+  /*///////////////////  END  TEST - div ////////////*/
