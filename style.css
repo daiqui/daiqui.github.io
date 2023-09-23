@@ -8,11 +8,11 @@
   body{
     background-color: white;
     /* font*/ 
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
   }
   
   h1{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
   }
   
 .pageContentText {
@@ -58,6 +58,7 @@
   }
   
   .nav-branding{
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     transition: 0.5s ease;
   }
