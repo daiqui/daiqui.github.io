@@ -25,4 +25,3 @@ mainController.updateWhatsAppLink();
 
 // Load the content displayed for each page of the website.
 mainController.loadPageContent();
-

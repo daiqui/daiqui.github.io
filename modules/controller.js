@@ -9,14 +9,12 @@ export default class Controller {
 
     start() {
         //Activate the controller if it's not already active.
-        if (!this.#isActive) {
+        if (this.#isActive) {
+            console.log(`${this.#name} Controller is already active!`);
+        } else {
             this.#isActive = true;
             // Log the controller's activation.
             console.log(`${this.#name} Controller active!`);
-            return true;
-        } else {
-            console.log(`${this.#name} Controller is already active!`);
-            return false;
         }
     }
 
