@@ -1,3 +1,7 @@
+/* Replace <password> with the password for the nowMAKI user. Ensure any option params are 
+URL encoded
+---------------------------------------------------------------------------------------------*/
+
 //Add your connection string into your application code
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://nowMAKI:<password>@cluster0.jphtbp6.mongodb.net/?retryWrites=true&w=majority";

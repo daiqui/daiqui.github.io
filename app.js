@@ -26,5 +26,10 @@ mainController.updateWhatsAppLink();
 // Load the content displayed for each page of the website.
 mainController.loadPageContent();
 
-//testing console
+
+
+
+/*-----------------------------------------------------------------
+testing UUID for UserId !!! */
 console.log(crypto.randomUUID());
+/*----------------------------------------------------------------*/
