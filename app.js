@@ -27,4 +27,4 @@ mainController.updateWhatsAppLink();
 mainController.loadPageContent();
 
 //testing console
-console.log("Hi just testing the console!");
+console.log(crypto.randomUUID());
