@@ -4,7 +4,7 @@ import MainController from "./modules/main-controller.js";
 import LogicController from "./modules/logic-controller.js";
 import ViewController from "./modules/view-controller.js";
 
-// Log the app's activation.
+// Log the app's activation..
 console.log("app active!");
 
 // Create instances of controllers with appropriate names.
