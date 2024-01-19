@@ -1,5 +1,12 @@
 /* Replace <password> with the password for the nowMAKI user. Ensure any option params are 
 URL encoded
+
+in Terminal run: 
+>> cd path/to/your/project
+>> npm init -y
+>> npm install mongodb
+
+-- make sure db-controller.js is imported and called in app.js
 ---------------------------------------------------------------------------------------------*/
 
 //Add your connection string into your application code
