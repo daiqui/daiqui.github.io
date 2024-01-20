@@ -4,6 +4,10 @@ import MainController from "./modules/main-controller.js";
 import LogicController from "./modules/logic-controller.js";
 import ViewController from "./modules/view-controller.js";
 
+// Import using ESM syntax
+import { connectToMongoDB } from "./db_controller.js";
+
+
 // Log the app's activation.
 console.log("app active!");
 
@@ -33,3 +37,7 @@ mainController.loadPageContent();
 testing UUID for UserId !!! */
 console.log(crypto.randomUUID());
 /*----------------------------------------------------------------*/
+
+
+// Call the connectToMongoDB function
+connectToMongoDB();
