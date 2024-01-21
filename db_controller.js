@@ -3,6 +3,7 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const uri = "mongodb+srv://nowMAKI:monG!o4tlas@cluster0.jphtbp6.mongodb.net/?retryWrites=true&w=majority";
+console.log("dB-controller started!");
 
 async function connectToMongoDB() {
     const client = new MongoClient(uri, {
