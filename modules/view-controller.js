@@ -7,7 +7,10 @@ export default class ViewController extends Controller {
         super("view");
     }
     navPanel() {
-        navBar();
+        if (typeof document !== 'undefined') {
+            // Code, only used in Browser (Frontend)
+            navBar();
+        }
     }
 }
 
