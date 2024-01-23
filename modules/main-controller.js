@@ -23,7 +23,9 @@ export default class MainController extends Controller {
 
     // This function loads content based on the URL hash and sets a default hash if none is provided.
     loadPageContent() {
-        loadPage();
+        if (typeof window !== 'undefined') {
+            loadPage();
+        }
     }
 }
 
