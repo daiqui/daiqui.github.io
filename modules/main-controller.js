@@ -13,10 +13,14 @@ export default class MainController extends Controller {
     }
     // Updates the href attribute of <a> elements to redirect users to the real WhatsApp link.
     updateWhatsAppLink() {
-        const configLink = createConfig().getWhatsAppLink();
-        const linkElement = document.getElementById("whatsAppLink");
-        linkElement.setAttribute('href', configLink);
+        if (typeof document !== 'undefined') {
+            // Code, der nur im Browser (Frontend) verwendet wird
+            const configLink = createConfig().getWhatsAppLink();
+            const linkElement = document.getElementById("whatsAppLink");
+            linkElement.setAttribute('href', configLink);
+        }
     }
+
     // This function loads content based on the URL hash and sets a default hash if none is provided.
     loadPageContent() {
         loadPage();
