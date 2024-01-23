@@ -40,6 +40,7 @@ console.log(crypto.randomUUID());
 
 
 // Call the connectToMongoDB function
+console.log("where is mongo api key? before");
 connectToMongoDB();
 
-console.log("where is mongo api key?");
+console.log("where is mongo api key? after");
