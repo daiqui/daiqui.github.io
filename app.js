@@ -35,8 +35,13 @@ mainController.loadPageContent();
 
 /*-----------------------------------------------------------------
 testing UUID for UserId !!! */
-console.log(crypto.randomUUID());
-console.log(crypto.randomUUID());
+if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typeof window.crypto.randomUUID === 'function') {
+    console.log(window.crypto.randomUUID());
+} else {
+    console.log("Crypto.randomUUID() is not available in this environment.");
+}
+
+//console.log(crypto.randomUUID());
 /*----------------------------------------------------------------*/
 
 
