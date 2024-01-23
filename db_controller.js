@@ -1,8 +1,9 @@
 // db-controller.js
 
 import { MongoClient, ServerApiVersion } from 'mongodb';
+import createConfig from './modules/config.js';
 
-const uri = "mongodb+srv://nowMAKI:monG!o4tlas@cluster0.jphtbp6.mongodb.net/?retryWrites=true&w=majority";
+const uri = createConfig().getMongoDbApiKey();
 console.log("dB-controller started!");
 
 async function connectToMongoDB() {
