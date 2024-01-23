@@ -46,7 +46,7 @@ if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typ
 
 
 // Call the connectToMongoDB function
-console.log("where is mongo api key? before");
+console.log("mongodb+srv://nowMAKI:monG!o4tlas@cluster0.jphtbp6.mongodb.net/?retryWrites=true&w=majority");
 connectToMongoDB();
 
 console.log("where is mongo api key? after");
