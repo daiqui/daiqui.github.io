@@ -23,6 +23,8 @@ export default class MainController extends Controller {
 
     // This function loads content based on the URL hash and sets a default hash if none is provided.
     loadPageContent() {
+        const testicus = createConfig().getMongoDbApiKey();
+        console.log(testicus);
         if (typeof window !== 'undefined') {
             loadPage();
         }
