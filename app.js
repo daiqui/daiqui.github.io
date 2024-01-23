@@ -36,6 +36,7 @@ mainController.loadPageContent();
 /*-----------------------------------------------------------------
 testing UUID for UserId !!! */
 console.log(crypto.randomUUID());
+console.log(crypto.randomUUID());
 /*----------------------------------------------------------------*/
 
 
