@@ -1,6 +1,5 @@
 // db-controller.js
-
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { MongoClient, ServerApiVersion } from "./node_modules/mongodb"
 import createConfig from "./modules/config.js"
 
 
