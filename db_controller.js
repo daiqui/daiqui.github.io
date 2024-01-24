@@ -25,7 +25,7 @@ async function connectToMongoDB() {
         const collection = database.collection("myCollection");
 
         // Insert a sample document
-        const result = await collection.insertOne({ message: "Hello, MongoDB!" });
+        const result = await collection.insertOne({ message: "Hello, MongoDB**!" });
         console.log(`Inserted ${result.insertedCount} document into the collection`);
 
     } finally {
