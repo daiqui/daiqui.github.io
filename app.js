@@ -46,5 +46,5 @@ if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typ
 
 
 // Call the connectToMongoDB function
-connectToMongoDB();
+//connectToMongoDB();
 
