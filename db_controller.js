@@ -4,7 +4,10 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 import createConfig from './modules/config.js';
 
 const uri = createConfig().getMongoDbApiKey();
-console.log(uri);
+
+// PLS del: Test if config.js is connencted
+const HiConfig = createConfig().sayHiConfig();
+console.log(HiConfig);
 console.log("dB-controller started!");
 
 async function connectToMongoDB() {
