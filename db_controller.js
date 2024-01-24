@@ -1,7 +1,8 @@
 // db-controller.js
 
 import { MongoClient, ServerApiVersion } from 'mongodb';
-import createConfig from './modules/config.js';
+import createConfig from "./modules/config.js"
+
 
 const uri = createConfig().getMongoDbApiKey();
 
