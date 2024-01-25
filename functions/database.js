@@ -1,5 +1,5 @@
 // functions/database.js
-import { connectToMongoDB } from '../db_controller';
+import { connectToMongoDB } from '../db_controller.js';
 
 exports.handler = async (event, context) => {
     try {
