@@ -24,11 +24,11 @@ logicController.updateWhatsAppLink();
 
 /*-----------------------------------------------------------------
 testing UUID for UserId !!! */
-// if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typeof window.crypto.randomUUID === 'function') {
-//     console.log(window.crypto.randomUUID());
-// } else {
-//     console.log("Crypto.randomUUID() is not available in this environment.");
-// }
+if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typeof window.crypto.randomUUID === 'function') {
+    console.log(window.crypto.randomUUID());
+} else {
+    console.log("Crypto.randomUUID() is not available in this environment.");
+}
 
 //console.log(crypto.randomUUID());
 /*----------------------------------------------------------------*/
