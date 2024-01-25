@@ -2,10 +2,7 @@
 // Import the Controller class from the controller module.
 import LogicController from "./modules/logic-controller.js";
 import ViewController from "./modules/view-controller.js";
-
-// Import using ESM syntax
 import { connectToMongoDB } from "./db_controller.js";
-
 
 // Log the app's activation.
 console.log("app active!");
@@ -18,16 +15,11 @@ const viewController = new ViewController();        // Controls the user interfa
 logicController.start();
 viewController.start();
 
-// Configure the navigation panel, allowing users to switch between pages.
+// Configure the navigation panel, allowing users to switch between pages and display page content
 viewController.navPanel();
 
 // Updates href attribute to redirect users to WhatsApp.
 logicController.updateWhatsAppLink();
-
-// Load the content displayed for each page of the website.
-mainController.loadPageContent();
-
-
 
 
 /*-----------------------------------------------------------------

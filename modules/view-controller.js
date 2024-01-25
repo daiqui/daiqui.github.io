@@ -6,14 +6,17 @@ export default class ViewController extends Controller {
         // Call the constructor of the superclass (Controller) with the default name 'view'.
         super("view");
     }
+
     navPanel() {
         if (typeof document !== 'undefined') {
             // Code, only used in Browser (Frontend)
             navBar();
+            loadPageContent();
         }
     }
 }
 
+// Navigation Bar
 function navBar() {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
@@ -22,16 +25,53 @@ function navBar() {
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
-    })
+    });
 
     document.querySelectorAll(".nav-link").forEach((link) => link.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
-    }))
+    }));
 
     navBranding.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
-    })
+    });
 }
 
+// This function loads content based on the URL hash and sets a default hash if none is provided.
+function loadPageContent() {
+    // Event listener to handle hash changes
+    window.addEventListener('hashchange', loadContent);
+
+    // Initial content load
+    loadContent();
+
+    // Check if the hash is empty (no hash provided in the URL)
+    if (window.location.hash === '') {
+        // Set the default hash to '#club'
+        window.location.hash = '#club';
+    }
+}
+
+// Display Page Content
+function loadContent() {
+    const hash = window.location.hash;
+    const contentMain = document.getElementById('content');
+
+    switch (hash) {
+        case '#club':
+            contentMain.innerHTML = '<h1>Willkommen zum Buchklub</h1><p>Das ist der Inhalt des Buchklubs</p>';
+            break;
+        case '#overview':
+            contentMain.innerHTML = '<h1>Übersicht</h1><p>Lorem <strong>ipsum</strong> dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br><h1>At vero eos et accusam et</h1><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>';
+            break;
+        case '#literature':
+            contentMain.innerHTML = '<div class="test0"><h1>Literature</h1><p> Entdecke unsere große Auswahl an Büchern.</p></div><br></br><div class ="test1"><h1>Weitere Literature</h1><p> Entdecke unsere große Auswahl an Büchern.</p></div><br></br><div class ="test2"><h1>... und noch mehr</h1><p> Entdecke unsere große Auswahl an Büchern.</p></div>';
+            break;
+        case '#members':
+            contentMain.innerHTML = '<h1>Members</h1><p>Meet our Bookclub members.</p>';
+            break;
+        default:
+            contentMain.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
+    }
+}
