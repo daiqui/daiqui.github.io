@@ -5,10 +5,8 @@ import createConfig from "./modules/config.js"
 
 const uri = createConfig().getMongoDbApiKey();
 
-// PLS del: Test if config.js is connencted
-const HiConfig = createConfig().sayHiConfig();
-console.log(HiConfig);
-console.log("dB-controller started!");
+// Log db_Controller
+console.log("db_controller started!");
 
 async function connectToMongoDB() {
     const client = new MongoClient(uri, {

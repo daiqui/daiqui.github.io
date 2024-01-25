@@ -7,24 +7,9 @@ export default class MainController extends Controller {
         // Call the constructor of the superclass (Controller) with the default name 'view'.
         super("main");
     }
-    // This function adds the navigation menu to the view using the provided 'visualController'.
-    pageMenu(visualController) {
-        visualController.navPanel();
-    }
-    // Updates the href attribute of <a> elements to redirect users to the real WhatsApp link.
-    updateWhatsAppLink() {
-        if (typeof document !== 'undefined') {
-            // Code, der nur im Browser (Frontend) verwendet wird
-            const configLink = createConfig().getWhatsAppLink();
-            const linkElement = document.getElementById("whatsAppLink");
-            linkElement.setAttribute('href', configLink);
-        }
-    }
 
     // This function loads content based on the URL hash and sets a default hash if none is provided.
     loadPageContent() {
-        const testicus = createConfig().getMongoDbApiKey();
-        console.log(testicus);
         if (typeof window !== 'undefined') {
             loadPage();
         }
