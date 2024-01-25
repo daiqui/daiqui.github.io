@@ -2,7 +2,7 @@
 // Import the Controller class from the controller module.
 import LogicController from "./modules/logic-controller.js";
 import ViewController from "./modules/view-controller.js";
-import { connectToMongoDB } from "./db_controller.js";
+//import { connectToMongoDB } from "./db_controller.js";
 
 // Log the app's activation.
 console.log("app active!");
@@ -24,16 +24,16 @@ logicController.updateWhatsAppLink();
 
 /*-----------------------------------------------------------------
 testing UUID for UserId !!! */
-if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typeof window.crypto.randomUUID === 'function') {
-    console.log(window.crypto.randomUUID());
-} else {
-    console.log("Crypto.randomUUID() is not available in this environment.");
-}
+// if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typeof window.crypto.randomUUID === 'function') {
+//     console.log(window.crypto.randomUUID());
+// } else {
+//     console.log("Crypto.randomUUID() is not available in this environment.");
+// }
 
 //console.log(crypto.randomUUID());
 /*----------------------------------------------------------------*/
 
 
 // Call the connectToMongoDB function
-connectToMongoDB();
+//connectToMongoDB();
 
