@@ -2,7 +2,7 @@
 // Import the Controller class from the controller module.
 import LogicController from "./modules/logic-controller.js";
 import ViewController from "./modules/view-controller.js";
-//import { connectToMongoDB } from "./db_controller.js";
+import { connectToMongoDB } from "./db_controller.js";
 
 // Log the app's activation.
 console.log("app active!");
@@ -35,5 +35,5 @@ if (typeof window !== 'undefined' && typeof window.crypto !== 'undefined' && typ
 
 
 // Call the connectToMongoDB function
-//connectToMongoDB();
+connectToMongoDB();
 
