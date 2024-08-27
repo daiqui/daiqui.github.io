@@ -1,0 +1,51 @@
+{
+    "fairies": [
+      {
+        "id": 1,
+        "image": "images/fairy1.jpeg",
+        "name": "Flora",
+        "basic_health": 100,
+        "basic_attack": 15,
+        "basic_defense": 10,
+        "special": 20,
+        "speed": 12,
+        "mana_recovery": 5,
+        "loyalty": 100
+      },
+      {
+        "id": 2,
+        "image": "images/fairy2.jpeg",
+        "name": "Luna",
+        "basic_health": 120,
+        "basic_attack": 10,
+        "basic_defense": 15,
+        "special": 25,
+        "speed": 14,
+        "mana_recovery": 4,
+        "loyalty": 90
+      },
+      {
+        "id": 3,
+        "image": "images/fairy3.jpeg",
+        "name": "Astra",
+        "basic_health": 110,
+        "basic_attack": 12,
+        "basic_defense": 12,
+        "special": 18,
+        "speed": 16,
+        "mana_recovery": 6,
+        "loyalty": 95
+      }
+    ],
+    "enemies": [
+      {
+        "id": 1,
+        "image": "images/enemy1.jpeg",
+        "name": "Goblin",
+        "basic_health": 80,
+        "basic_attack": 10,
+        "basic_defense": 8
+      }
+    ]
+  }
+  

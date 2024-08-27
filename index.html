@@ -1,65 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Playfair+Display:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- icon -->
-    <script
-      src="https://kit.fontawesome.com/10dcc570c4.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Buchklub</title>
+    <title>FairyDust</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="fav/icon.png" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <a href="#club" class="nav-branding">Buchclub</a>
-
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#overview" class="nav-link">Übersicht</a>
-          </li>
-          <li class="nav-item">
-            <a href="#literature" class="nav-link">Literatur</a>
-          </li>
-          <li class="nav-item">
-            <a href="#members" class="nav-link">Mitglieder</a>
-          </li>
-        </ul>
-
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <div id="content" class="pageContentText">
-        <!-- Content will be inserted here -->
-      </div>
-    </main>
-    <footer class="footer-content">
-      <a
-        href="https://chat.whatsapp.com/placeholder"
-        id="whatsAppLink"
-        target="_blank"
-        rel="noopener"
-        class="whatsapp-link"
-      >
-        <!-- insert icon -->
-        <i class="fa-brands fa-whatsapp"></i>
-        <span class="whatsapp-text">WhatsApp</span>
-      </a>
-    </footer>
-    <script type="module" src="app.js"></script>
+    <div id="game-container">
+      <div id="screen"></div>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
