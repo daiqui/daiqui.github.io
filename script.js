@@ -40,17 +40,6 @@ document.getElementById('multiplyMatrices').addEventListener('click', () => {
     createMatrix('resultMatrixContainer', result.length, result[0].length, false, result);
 });
 
-// Explore-Button für die Einzelmatrix
-document.getElementById('exploreSingleMatrix').addEventListener('click', () => {
-    const matrix = getMatrixData('singleMatrixContainer');
-    const formattedMatrix = matrix.map(row => `{${row.join(',')}}`).join(',');
-    const matrixString = `{{${formattedMatrix}}}`;
-
-    navigator.clipboard.writeText(matrixString).then(() => {
-        alert('Matrix in die Zwischenablage kopiert:\n' + matrixString);
-    });
-});
-
 // Matrix erstellen und mit Einheitsmatrix füllen (falls benötigt)
 function createMatrix(containerId, rows, columns, isIdentity = false, matrixData = null) {
     const container = document.getElementById(containerId);
@@ -75,7 +64,7 @@ function createMatrix(containerId, rows, columns, isIdentity = false, matrixData
             if (isIdentity && i === j) {
                 input.value = '1'; // Diagonale der Einheitsmatrix
             } else if (matrixData) {
-                input.value = matrixData[i][j]; // Falls Matrixdaten existieren
+                input.value = formatResult(matrixData[i][j]); // Falls Matrixdaten existieren, richtig formatieren
             } else {
                 input.value = '0'; // Alle anderen Werte auf 0 setzen
             }
@@ -120,6 +109,17 @@ function getMatrixData(containerId) {
     return matrix;
 }
 
+// Explore-Button: Matrix als String in die Zwischenablage kopieren
+document.getElementById('exploreMatrix').addEventListener('click', () => {
+    const matrixData = getMatrixData('singleMatrixContainer');
+    const matrixString = matrixData.map(row => `{${row.map(formatForString).join(',')}}`).join(',');
+    const clipboardString = `{${matrixString}}`;
+
+    navigator.clipboard.writeText(clipboardString)
+        .then(() => alert(`Matrix wurde kopiert:\n${clipboardString}`))
+        .catch(err => alert(`Fehler beim Kopieren: ${err}`));
+});
+
 // Matrizen multiplizieren
 function multiplyMatrices(A, B) {
     const result = [];
@@ -149,7 +149,7 @@ function reduceFraction([numerator, denominator]) {
     numerator /= divisor;
     denominator /= divisor;
 
-    return denominator === 1 ? numerator.toString() : `${numerator}/${denominator}`;
+    return [numerator, denominator];
 }
 
 // Funktion zum Parsen eines Bruchs
@@ -164,5 +164,17 @@ function parseFraction(value) {
 // Bruch formatieren
 function formatFraction(value) {
     const [numerator, denominator] = parseFraction(value);
-    return reduceFraction([numerator, denominator]);
+    const reduced = reduceFraction([numerator, denominator]);
+    return reduced[1] === 1 ? reduced[0].toString() : `${reduced[0]}/${reduced[1]}`;
+}
+
+// Funktion zum Formatieren von Bruchdaten für Wolfram Alpha
+function formatForString([numerator, denominator]) {
+    return denominator === 1 ? `${numerator}` : `${numerator}/${denominator}`;
+}
+
+// Funktion zur Formatierung der Ergebnisse
+function formatResult(fraction) {
+    const [numerator, denominator] = fraction;
+    return denominator === 1 ? numerator.toString() : `${numerator}/${denominator}`;
 }

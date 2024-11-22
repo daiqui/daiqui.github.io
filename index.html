@@ -16,6 +16,7 @@
         <button class="tab-button" data-tab="multiplicationTab">A x B</button>
       </div>
 
+      <!-- Single Matrix Tab -->
       <div id="singleMatrixTab" class="tab-content active">
         <div class="controls">
           <label for="singleRows">(m x n):</label>
@@ -23,11 +24,12 @@
           <label for="singleColumns">x</label>
           <input type="number" id="singleColumns" min="1" max="5" value="2" />
           <button id="generateSingleMatrix">create</button>
-          <button id="exploreSingleMatrix">explore</button>
+          <button id="exploreMatrix">explore</button>
         </div>
         <div id="singleMatrixContainer" class="matrix-container"></div>
       </div>
 
+      <!-- Multiplication Tab -->
       <div id="multiplicationTab" class="tab-content">
         <div class="controls">
           <h3>Matrix A:</h3>
@@ -43,7 +45,7 @@
           <input type="number" id="columnsB" min="1" max="5" value="2" />
 
           <button id="generateMultiplicationMatrices">create</button>
-          <button id="multiplyMatrices">x</button>
+          <button id="multiplyMatrices">multiply</button>
         </div>
         <div id="matrixMultiplicationContainer" class="matrix-container">
           <div id="matrixAContainer"></div>
