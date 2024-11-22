@@ -1,91 +1,121 @@
-/* General styling */
-body, html {
+/* Grundstyles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif; /* Apply Arial font to all text */
-}
-
-#game-container {
-    width: 95%;
-    height: 95%;
-    max-width: 2400px;
-    max-height: 1600px;
-    min-width: 320px;
-    min-height: 240px;
-    /* border: 1px solid white; */
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#screen {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-#story-image-container, #story-text-container {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#story-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-#story-text-container {
     padding: 20px;
-    color: white;
-    text-align: left; /* Align text to the left */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
     display: flex;
-    flex-direction: column; /* Stack text and options vertically */
     justify-content: center;
-    align-items: flex-start; /* Align items to the left */
-    font-size: 1.5em; /* Default text size */
-    line-height: 1.5; /* Spacing between lines of text */
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.story-option {
-    color: white; /* Make the options white */
-    text-decoration: none; /* Remove underline */
+.tab-button {
+    padding: 10px 20px;
     cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    display: block; /* Ensure options are displayed as block elements */
-    margin-top: 10px; /* Space between options */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
-.story-option:hover {
-    color: #88fec9; /* Light blue color on hover */
-}
-
-.story-option:before {
-    content: "- "; /* Add the "- " before each option */
+.tab-button.active {
+ 
+    background-color:  #007BFF;
+    border: 1px solid  #007BFF;
+    /* border: 1px solid  #007BFF; */
     color: white;
 }
 
-#story-text-container p {
-    margin: 0 0 20px 0; /* Margin between paragraphs */
+.tab-button:hover {
+ border: 1px solid #333;
 }
 
-@media screen and (max-height: 600px) {
-    #story-text-container {
-        font-size: 1.2em; /* Adjust text size for smaller screens */
+.matrix-cell:hover {
+    background-color: #f1f1f1;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Matrix Styling */
+.matrix-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.matrix-table {
+    border-spacing: 0;
+    display: inline-block;
+    padding: 0;
+}
+
+/* Matrix Zellen */
+.matrix-cell {
+    text-align: center;
+    width: 60px;
+    height: 40px;
+    font-size: 1.2rem;
+    font-family: "Courier New", monospace;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;  /* Abgerundete Ecken für die Matrixzellen */
+}
+
+.matrix-cell:focus {
+    outline: none;
+    background-color: #e0f7fa;
+}
+
+/* Margin für Tabs */
+.controls {
+    margin-bottom: 20px;
+}
+
+.matrix-cell {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Etwas stärkerer Schatten*/
+} 
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .matrix-container {
+        gap: 10px;
+    }
+
+    .matrix-cell {
+        width: 45px;
+        height: 30px;
     }
 }

@@ -3,14 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FairyDust</title>
+    <title>vectorTrace</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="fav/icon.png" />
   </head>
   <body>
-    <div id="game-container">
-      <div id="screen"></div>
+    <div class="container">
+      <h1>vectorTrace</h1>
+      <div class="tabs">
+        <button class="tab-button active" data-tab="singleMatrixTab">
+          Matrix
+        </button>
+        <button class="tab-button" data-tab="multiplicationTab">A x B</button>
+      </div>
+
+      <div id="singleMatrixTab" class="tab-content active">
+        <div class="controls">
+          <label for="singleRows">(m x n):</label>
+          <input type="number" id="singleRows" min="1" max="5" value="2" />
+          <label for="singleColumns">x</label>
+          <input type="number" id="singleColumns" min="1" max="5" value="2" />
+          <button id="generateSingleMatrix">create</button>
+        </div>
+        <div id="singleMatrixContainer" class="matrix-container"></div>
+      </div>
+
+      <div id="multiplicationTab" class="tab-content">
+        <div class="controls">
+          <h3>Matrix A:</h3>
+          <label for="rowsA">m:</label>
+          <input type="number" id="rowsA" min="1" max="5" value="2" />
+          <label for="columnsA">n:</label>
+          <input type="number" id="columnsA" min="1" max="5" value="2" />
+
+          <h3>Matrix B:</h3>
+          <label for="rowsB">n:</label>
+          <input type="number" id="rowsB" min="1" max="5" value="2" />
+          <label for="columnsB">k:</label>
+          <input type="number" id="columnsB" min="1" max="5" value="2" />
+
+          <button id="generateMultiplicationMatrices">create</button>
+          <button id="multiplyMatrices">x</button>
+        </div>
+        <div id="matrixMultiplicationContainer" class="matrix-container">
+          <div id="matrixAContainer"></div>
+          <div id="matrixBContainer"></div>
+          <div id="resultMatrixContainer"></div>
+        </div>
+      </div>
     </div>
-    <script src="main.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
