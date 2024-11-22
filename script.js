@@ -40,6 +40,17 @@ document.getElementById('multiplyMatrices').addEventListener('click', () => {
     createMatrix('resultMatrixContainer', result.length, result[0].length, false, result);
 });
 
+// Explore-Button für die Einzelmatrix
+document.getElementById('exploreSingleMatrix').addEventListener('click', () => {
+    const matrix = getMatrixData('singleMatrixContainer');
+    const formattedMatrix = matrix.map(row => `{${row.join(',')}}`).join(',');
+    const matrixString = `{{${formattedMatrix}}}`;
+
+    navigator.clipboard.writeText(matrixString).then(() => {
+        alert('Matrix in die Zwischenablage kopiert:\n' + matrixString);
+    });
+});
+
 // Matrix erstellen und mit Einheitsmatrix füllen (falls benötigt)
 function createMatrix(containerId, rows, columns, isIdentity = false, matrixData = null) {
     const container = document.getElementById(containerId);
